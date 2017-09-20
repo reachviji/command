@@ -32,7 +32,8 @@ server.post('/command', (req, res, next) => {''
         displayText: speech,
         source: "command" 
 	  }); 
-   }  
+   } 
+    return next();
 });
 
 server.listen(PORT, () => console.log(`Robot Command running on ${PORT}`));
