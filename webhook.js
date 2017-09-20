@@ -14,7 +14,7 @@ server.use(Restify.bodyParser());
 server.use(Restify.jsonp());
 
 // POST route handler
-server.post('/command', (req, res, next) => {''
+server.post('/command', (req, res, next) => {
   let {
     status,
     result
