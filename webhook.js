@@ -30,7 +30,7 @@ server.post('/command', (req, res, next) => {''
 	 res.json({
 		speech: speech,
         displayText: speech,
-        source: "speechapi" 
+        source: "command" 
 	  }); 
    }  
 });
