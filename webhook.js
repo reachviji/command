@@ -4,7 +4,7 @@ const server = Restify.createServer({
   name: "command"
 });
 const request = require('request');
-const PORT = process.env.PORT || 8000;
+//const PORT = process.env.PORT || 8000;
 
 // call the other js file
 //const websocket = require('./websocket');
@@ -35,4 +35,4 @@ server.post('/command', (req, res, next) => {''
    }  
 });
 
-server.listen(PORT, () => console.log(`Robot Command running on ${PORT}`));
+//server.listen(PORT, () => console.log(`Robot Command running on ${PORT}`));
