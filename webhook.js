@@ -19,20 +19,16 @@ server.post('/command', (req, res, next) => {
     status,
     result
   } = req.body;
-
-   if(status.code === 200){
-	 const command = result.parameters;
-	 let speech = `Robot will ` +result.parameters.command + ` now`;
-	 // call the websocket and see for the response
-	 console.log("This is from webhook: " +speech);
+  const command = result.parameters;
+  let speech = `Robot will ` +result.parameters.command + ` now`;
+ // call the websocket and see for the response
+  console.log("This is from webhook: " +speech);
 	 //websocket.hello(speech);
-	 
-	 res.json({
-		speech: speech,
+  res.json({
+	speech: speech,
         displayText: speech,
         source: "command" 
 	  }); 
-   } 
     return next();
 });
 
