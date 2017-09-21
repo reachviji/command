@@ -9,7 +9,7 @@
   "author": "Viji",
   "dependencies": {
     "request": "2.79.0",
-    "restify": "4.3.0"
+    "restify": "4.3.0",
     "body-parser": "^1.15.0",
     "express": "^4.13.4"
   }
