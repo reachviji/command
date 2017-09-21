@@ -1,0 +1,14 @@
+{
+  "name": "command",
+  "version": "1.0.0",
+  "description": "Command the robot",
+  "main": "webhook.js",
+  "scripts": {
+    "start": "node webhook.js"
+  },
+  "author": "Viji",
+  "dependencies": {
+    "body-parser": "1.18.1",
+    "express": "^4.13.4"
+  }
+}
