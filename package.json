@@ -2,7 +2,7 @@
   "name": "command",
   "version": "1.0.0",
   "description": "Command the robot",
-  "main": "index.js",
+  "main": "webhook.js",
   "scripts": {
     "start": "node webhook.js"
   },
