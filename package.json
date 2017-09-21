@@ -4,9 +4,9 @@
   "description": "command",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node webhook.js"
   },
-  "author": "Sunil Syal",
+  "author": "Viji",
   "dependencies": {
     "body-parser": "^1.15.0",
     "express": "^4.13.4"
