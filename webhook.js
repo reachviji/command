@@ -7,7 +7,7 @@ const request = require('request');
 const PORT = process.env.PORT || 8000;
 
 // call the other js file
-const websocket = require('./websocket');
+//const websocket = require('./websocket');
 
 
 server.use(Restify.bodyParser());
