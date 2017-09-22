@@ -13,15 +13,13 @@ restService.use(bodyParser.json());
 restService.post('/echo', function(req, res) {
 	var speech = req.body.result && req.body.result.parameters && req.body.result.parameters.command ? req.body.result.parameters.command : "Seems like some problem. Speak again."
 	
-	//senddatatows(speech);
-	console.log("This is from webhook: " +speech);
 	senddatatows(speech);
+	console.log("This is from webhook: " +speech);
 	return res.json({
 		speech: speech,
 		displayText: speech,
 		source: 'command'
 	});
-//	return speech;
 	
 });
 
@@ -29,7 +27,6 @@ restService.post('/echo', function(req, res) {
 function senddatatows(speech) {
 	// websocket link
 	var ws = new WebSocket('wss://ws-broadcast-server-d062507.cfapps.eu10.hana.ondemand.com');
-//var speech = senddatatoapi();
 	ws.on('open', function open() {
 		ws.send(speech);
 	});
@@ -51,7 +48,6 @@ function senddatatows(speech) {
 		}	
 	});
 	ws.on('close', function close() {
-  //ws_client_state = "offline";
 		console.log('websocket cloud client disconnected');
 	});
 }
