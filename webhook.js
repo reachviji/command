@@ -51,8 +51,3 @@ function senddatatows(speech) {
 		console.log('websocket cloud client disconnected');
 	});
 }
-
-
-restService.listen((process.env.PORT || 8000), function() {
-    console.log("Server up and listening");
-});
