@@ -25,7 +25,7 @@ server.post('/command', (req, res, next) => {''
 	 let speech = `Robot will ` +result.parameters.command + ` now`;
 	 // call the websocket and see for the response
 	 console.log("This is from webhook: " +speech);
-	 websocket.hello(speech);
+	 //websocket.hello(speech);
 	 
 	 res.json({
 		speech: speech,
