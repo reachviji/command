@@ -1,26 +1,38 @@
 'use strict';
+const Restify = require('restify');
+const server = Restify.createServer({
+  name: "command"
+});
+const request = require('request');
+const PORT = process.env.PORT || 8000;
 
-const express = require('express');
-const bodyParser = require('body-parser');
+// call the other js file
+//const websocket = require('./websocket');
 
-const restService = express();
 
-restService.use(bodyParser.urlencoded({
-    extended: true
-}));
+server.use(Restify.bodyParser());
+server.use(Restify.jsonp());
 
-restService.use(bodyParser.json());
+// POST route handler
+server.post('/command', (req, res, next) => {''
+  let {
+    status,
+    result
+  } = req.body;
 
-restService.post('/command', function(req, res) {
-    var speech = req.body.result && req.body.result.parameters && req.body.result.parameters.command ? req.body.result.parameters.command : "I didn't get you.Please speak again."
-    return res.json({
-        speech: speech,
+   if(status.code === 200){
+	 const command = result.parameters;
+	 let speech = `Robot will ` +result.parameters.command + ` now`;
+	 // call the websocket and see for the response
+	 console.log("This is from webhook: " +speech);
+	 //websocket.hello(speech);
+	 
+	 res.json({
+		speech: speech,
         displayText: speech,
-        source: 'command'
-    });
+        source: "speechapi" 
+	  }); 
+   }  
 });
 
-
-restService.listen((process.env.PORT || 8000), function() {
-    console.log("Server up and listening");
-});
+server.listen(PORT, () => console.log(`Robot Command running on ${PORT}`));
