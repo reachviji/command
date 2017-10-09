@@ -1,6 +1,8 @@
 'use strict';
 
 var WebSocket = require('ws');
+var apiai = require('apiai');
+const uuid = require('uuid');
 const express = require('express');
 const bodyParser = require('body-parser');
 const restService = express();
@@ -11,9 +13,13 @@ restService.use(bodyParser.urlencoded({
 
 restService.use(bodyParser.json());
 
+let session = uuid.v1();
+var app = apiai("e326229494874f1fb34bd2c822f0cc3b");
+
 restService.post('/echo', function(req, res) {
 	var speech = req.body.result && req.body.result.parameters && req.body.result.parameters.command ? req.body.result.parameters.command : "Seems like some problem. Speak again."
 	console.log("This is from webhook: " +speech);
+	let request = app.textRequest(speech, {  sessionId: session  });
 	senddatatows(speech);
 	
 	return res.json({
