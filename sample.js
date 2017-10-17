@@ -41,9 +41,7 @@ function pub(msg) {
 	  messageType : 'std_msgs/String'
 	});
 
-	var str = new ROSLIB.Message({
-		data: msg
-	});
+	var str = new ROSLIB.Message(msg);
 
 	//console.log("Publishing chatbot");
 	speak.publish(str);
