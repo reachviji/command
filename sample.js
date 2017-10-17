@@ -18,9 +18,7 @@ var ros = new ROSLIB.Ros({
 	url : 'wss://localhost:9090'
 });
  
-ros.on('connection', function() { 
-  console.log('Connected to ROS-Bridge server.'); 
-}); 
+ros.on('connection', function()); 
  
  
 ros.on('error', function(error) { 
@@ -45,6 +43,6 @@ function pub(msg) {
 		data: msg
 	});
 
-	console.log("Publishing chatbot");
+	//console.log("Publishing chatbot");
 	speak.publish(str);
 };
