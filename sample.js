@@ -6,7 +6,7 @@ var ROSLIB = require('roslib');
 var ws = new WebSocket('wss://ws-broadcast-server-d062507.cfapps.eu10.hana.ondemand.com'); 
 
 ws.on('message', function incoming(msg) { 
-   console.log("This is from websocket: " +msg);
+   //console.log("This is from websocket: " +msg);
    pub(msg);
    
  }); 
@@ -18,7 +18,9 @@ var ros = new ROSLIB.Ros({
 	url : 'wss://localhost:9090'
 });
  
-ros.on('connection', function()); 
+ros.on('connection', function(){
+ // connection has been established
+}); 
  
  
 ros.on('error', function(error) { 
