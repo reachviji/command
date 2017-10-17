@@ -43,6 +43,6 @@ function pub(msg) {
 
 	var str = new ROSLIB.Message(msg);
 
-	//console.log("Publishing chatbot");
+	console.log("Publishing chatbot"+msg);
 	speak.publish(str);
 };
