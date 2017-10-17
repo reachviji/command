@@ -16,7 +16,7 @@ function pub(msg) {
 // ------------------
 
 	var speak = new ROSLIB.Topic({
-	  //ros : ros,
+	  ros : ros,
 	  name : '/chatbot',
 	  messageType : 'std_msgs/String'
 	});
