@@ -19,7 +19,7 @@ var ros = new ROSLIB.Ros({
 });
  
 ros.on('connection', function() { 
-  console.log('Connected to ROS-Bridge server.'); 
+  //console.log('Connected to ROS-Bridge server.'); 
 }); 
  
  
