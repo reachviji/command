@@ -11,27 +11,6 @@ ws.on('message', function incoming(msg) {
    
  }); 
 
-/* 
-	ROS-BRIDGE HANDLDER 
-	*/ 
-	/*State of ROS-BRIDGE connection*/ 
-var ros = new ROSLIB.Ros({
-	url : 'ws://localhost:9090'
-});
- 
-ros.on('connection', function() { 
-  console.log('Connected to ROS-Bridge server.'); 
-}); 
- 
- 
-ros.on('error', function(error) { 
-  console.log('Error connecting to ROS-bridge server: ', error); 
-}); 
- 
-ros.on('close', function() { 
-  console.log('Connection to ROS-Bridge server closed.'); 
-}); 
-	
 function pub(msg) {
 	// Publishing a Topic
 // ------------------
