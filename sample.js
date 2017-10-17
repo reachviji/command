@@ -18,8 +18,8 @@ var ros = new ROSLIB.Ros({
 	url : 'wss://localhost:9090'
 });
  
-ros.on('connection', function(){
- // connection has been established
+ros.on('connection', function() { 
+  console.log('Connected to ROS-Bridge server.'); 
 }); 
  
  
