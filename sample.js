@@ -46,5 +46,5 @@ function pub(msg) {
 	});
 
 	console.log("Publishing chatbot"+msg);
-	speak.publish(msg);
+	speak.publish(str);
 };
