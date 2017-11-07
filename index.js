@@ -11,9 +11,8 @@ ws.on('message', function incoming(msg) {
    
  }); 
 /* 
-	ROS-BRIDGE HANDLDER 
-	*/ 
-	/*State of ROS-BRIDGE connection*/ 
+ROS-BRIDGE HANDLDER 
+/*State of ROS-BRIDGE connection*/ 
 var ros = new ROSLIB.Ros({
 	url : 'ws://localhost:9090'
 });
@@ -23,8 +22,8 @@ ros.on('connection', function() {
 }); 
  
  
-ros.on('error', function() { 
-  console.log('Error connecting to ROS-bridge server: '); 
+ros.on('error', function(error) {
+  console.log('Error connecting to ROS-bridge server: ', error);
 }); 
  
 ros.on('close', function() { 
