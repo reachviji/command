@@ -23,8 +23,8 @@ ros.on('connection', function() {
 }); 
  
  
-ros.on('error', function(error) { 
-  console.log('Error connecting to ROS-bridge server: ', error); 
+ros.on('error', function() { 
+  console.log('Error connecting to ROS-bridge server: '); 
 }); 
  
 ros.on('close', function() { 
