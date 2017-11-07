@@ -2,7 +2,7 @@
 var WebSocket = require('ws'); 
 var ROSLIB = require('roslib');
 
-	/*webSocket Cloud options*/ 
+/*webSocket Cloud options*/ 
 var ws = new WebSocket('wss://ws-broadcast-server-d062507.cfapps.eu10.hana.ondemand.com'); 
 
 ws.on('message', function incoming(msg) { 
