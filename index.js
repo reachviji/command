@@ -1,9 +1,14 @@
-#!/usr/bin/env nodejs
+'use strict';
 var WebSocket = require('ws'); 
 var ROSLIB = require('roslib');
 
 /*webSocket Cloud options*/ 
 var ws = new WebSocket('wss://ws-broadcast-server-d062507.cfapps.eu10.hana.ondemand.com'); 
+
+ws.on('open', function open() { 
+	console.log("connected to HANA websocket");
+//	ws.send(speech); 
+}); 
 
 ws.on('message', function incoming(msg) { 
    //console.log("This is from websocket: " +msg);
