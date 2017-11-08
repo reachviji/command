@@ -2,9 +2,9 @@
   "name": "command",
   "version": "1.0.0",
   "description": "command",
-  "main": "webhook.js",
+  "main": "index.js",
   "scripts": {
-    "start": "node webhook.js"
+    "start": "node index.js"
   },
   "author": "Viji",
   "dependencies": {
